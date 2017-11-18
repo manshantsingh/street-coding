@@ -1,0 +1,30 @@
+lim = int('100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000')
+n = int(raw_input(''))
+ 
+while n>0:
+	n-=1
+	x = int(raw_input(''))
+	val=0
+	twos=0
+	most=1
+	curr=0
+	found=False
+	while val < lim:
+		if curr<=0:
+			val = (val-twos)+most*6;
+			twos+=most*2
+			curr=most*2
+			most*=10
+		else:
+			val+=curr
+			curr /= 10
+		
+		# print "val: {0}, curr: {1}, most: {2}, twos: {3}".format(val, curr, most, twos)
+ 
+		if val%x==0:
+			found=True
+			print val
+			break
+ 
+	if not found:
+		print -1 
