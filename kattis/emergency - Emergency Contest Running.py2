@@ -1,0 +1,6 @@
+n,k = [int(x) for x in raw_input().split(' ')]
+n-=1
+if n<=k or n<k*2:
+    print n
+else:
+    print k+1+n%k

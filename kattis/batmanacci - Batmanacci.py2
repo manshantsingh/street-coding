@@ -1,0 +1,16 @@
+import sys
+n,k = [int(x) for x in raw_input().split(' ')]
+if k<3:
+    print ('N' if (n+k)%2==0 else 'A')
+    sys.exit(0)
+arr=[1,1];
+while arr[len(arr)-1]<k:
+    arr.append(arr[len(arr)-1]+arr[len(arr)-2])
+index = len(arr)-1
+while index>1:
+    if arr[index-2]<k:
+        index-=1
+        k-=arr[index-1]
+    else:
+        index-=2
+print ('N' if index==0 else 'A')

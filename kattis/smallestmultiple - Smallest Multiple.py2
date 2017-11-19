@@ -1,0 +1,11 @@
+import sys
+def gcd(a,b):
+    while b>0:
+        a,b=b,a%b
+    return a
+for line in sys.stdin:
+    arr=[int(x) for x in line.split(' ')]
+    val=arr[0]
+    for i in xrange(1, len(arr)):
+        val=val/gcd(val,arr[i])*arr[i]
+    print val
